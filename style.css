@@ -9,8 +9,6 @@ body {
 
 .container-tile {
     background-color: black; 
-    width: 600px; 
-    height: 600px;
     margin: 25px auto;
     padding: 4px;
     display: grid;

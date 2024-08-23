@@ -21,7 +21,7 @@
 /* Medium devices screen */
 @media screen and (min-width: 768px) {
     .container-tile {
-        width: 700px;
-        height: 700px;
+        width: 600px;
+        height: 600px;
     }
 }

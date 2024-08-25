@@ -19,6 +19,21 @@ class TileContainer {
         this.state[position1.line][position1.column]  = tileValue; 
         this.state[position2.line][position2.column] = tileValue; 
     }
+
+    emptyBox() {
+        const state = this.state;
+        let numberEmptyBox = 0;
+
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 4; j++) {
+                if (state[i][j] == 0) {
+                    numberEmptyBox++;
+                }
+            }
+        }
+
+        return numberEmptyBox;
+    }
 }
 
 

@@ -25,7 +25,6 @@ body {
 
 .tile-row > div {
     color: white;
-    background-color: green;
     border-radius: 5px; 
     display: flex;
     align-items: center;

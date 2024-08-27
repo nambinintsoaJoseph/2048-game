@@ -6,8 +6,11 @@ class TileContainer {
     initialize() {
         const tileValue = Math.random() < 0.5 ? 2 : 4;
         let position1 = {line: 0, column: 0},
-            position2 = {line: 0, column: 0}; 
+            position2 = {line: 0, column: 0};
+        let tiles = document.querySelectorAll('.tile');
 
+        this.setState([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]);
+        
         // The position of the tiles must be different : 
         do {
             position1.line = Math.floor(Math.random() * 4); 
@@ -19,6 +22,10 @@ class TileContainer {
         this.state[position1.line][position1.column] = tileValue; 
         this.state[position2.line][position2.column] = tileValue; 
     }
+
+    setState(newState) {
+        this.state = newState;     
+    } 
 
     emptyBox() {
         const state = this.state;
@@ -122,5 +129,29 @@ class TileContainer {
             }
         }
         return false; 
+    }
+
+    getEmptyPositions() {
+        const state = this.state; 
+        let emptyPositions = []; 
+
+        for(let i = 0; i < 4; i++) {
+            for(let j = 0; j < 4; j++) {
+                if(state[i][j] === 0) {
+                    emptyPositions.push(i.toString() + j.toString()); 
+                }
+            }
+        }
+
+        return emptyPositions; 
+    }
+
+    eraseScreen() {
+        let tiles = document.querySelectorAll('.tile'); 
+
+        tiles.forEach((value) => {
+            value.style.backgroundColor = 'black';
+            value.innerHTML = ''
+        })
     }
 }

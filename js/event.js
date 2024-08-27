@@ -4,6 +4,15 @@ let btnUp = document.querySelector('.up'),
     btnRight = document.querySelector('.right'), 
     btnStart = document.querySelector('.start'); 
 
+let gameTiles = new TileContainer(
+    [
+        [0, 0, 0, 0], 
+        [0, 0, 0, 0], 
+        [0, 0, 0, 0], 
+        [0, 0, 0, 0]
+    ]
+); 
+
 btnStart.addEventListener('click', (e) => {
     let target = e.target;
 
@@ -19,6 +28,8 @@ btnStart.addEventListener('click', (e) => {
         }
     }
 
-    // Beginning of the game 
-    
+    gameTiles.eraseScreen(); 
+
+    gameTiles.initialize(); 
+    gameTiles.displayState();     
 }, false); 
